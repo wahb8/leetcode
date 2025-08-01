@@ -21,6 +21,10 @@ def regex(s, p):
         return True
     
     memo = {}
+    
+    if p == ".*":
+        return True
+
 
     if "*" in p:
         index = p.find("*")
@@ -28,9 +32,25 @@ def regex(s, p):
         
         string = char * len(s)
         
-        print(string)
         return (s in string)
+
+    
+    if len(p) != len(s):
+        print("a")
+        return False
+
+    if "." in p and p != ".*":
+        allc = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
+        index = p.find(".")
+        
+        if s[index] in allc:
+            return True
+    
+    if p == ".*":
+        return True
+
         
 
-print(regex("aaaaaaaaaaaaaaaaaaaa","a*"))
+
+print(regex("ab",".*"))
 
