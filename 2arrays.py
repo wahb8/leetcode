@@ -1,4 +1,4 @@
-
+# just things to check my commits
 
 nums1 = [1,2,3,0,0,0] # length = 6 = n + m = 3 + 3
 nums2 = [2,5,6] # length = n = 3
